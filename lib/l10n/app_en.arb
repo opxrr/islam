@@ -5,5 +5,10 @@
   "hadeth": "Hadeth",
   "tasbeh": "Mention",
   "radio": "Radio",
-  "hadeth_number": "Hadeth Number"
+  "hadeth_number": "Hadeth Number",
+  "settings": "Settings",
+  "dark_mode": "Dark Mode",
+  "light_mode": "Light Mode",
+  "theme": "Theme",
+  "language": "Language"
 }

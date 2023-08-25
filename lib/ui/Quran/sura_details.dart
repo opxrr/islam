@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:islam/providers/settings_provider.dart';
 import 'package:islam/ui/Quran/aya_content.dart';
-
-import '../theme_data.dart';
+import 'package:provider/provider.dart';
 
 class SurahDetaisScreen extends StatefulWidget {
   static const String routeName = 'surah-details';
@@ -17,6 +17,8 @@ class _SurahDetaisScreenState extends State<SurahDetaisScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
+
     //casting
     var args =
         ModalRoute.of(context)?.settings.arguments as SurahDetailsScreenArgs;
@@ -26,9 +28,7 @@ class _SurahDetaisScreenState extends State<SurahDetaisScreen> {
     return Container(
       decoration: BoxDecoration(
           image: DecorationImage(
-              image: AssetImage(MyThemeData.themeMode == ThemeMode.light
-                  ? 'assets/images/default_bg.png'
-                  : 'assets/images/dark_bg.png'),
+              image: AssetImage(provider.getBackGroundImage()),
               fit: BoxFit.fill)),
       child: Scaffold(
         appBar: AppBar(
@@ -43,19 +43,19 @@ class _SurahDetaisScreenState extends State<SurahDetaisScreen> {
               child: surahContent.isEmpty
                   ? Center(child: CircularProgressIndicator())
                   : ListView.separated(
-                      itemBuilder: (buildContext, index) {
-                        return AyaContent(surahContent[index]);
-                      },
-                      itemCount: surahContent.length,
-                      separatorBuilder: (buildContext, index) {
-                        return Container(
-                          color: Theme.of(context).hintColor,
-                          height: 1,
-                          width: double.infinity,
-                          margin: EdgeInsets.symmetric(horizontal: 64),
-                        );
-                      },
-                    ),
+                itemBuilder: (buildContext, index) {
+                  return AyaContent(surahContent[index]);
+                },
+                itemCount: surahContent.length,
+                separatorBuilder: (buildContext, index) {
+                  return Container(
+                    color: Theme.of(context).hintColor,
+                    height: 1,
+                    width: double.infinity,
+                    margin: EdgeInsets.symmetric(horizontal: 64),
+                  );
+                },
+              ),
             ),
           ),
         ]),
