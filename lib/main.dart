@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:islam/providers/settings_provider.dart';
 import 'package:islam/ui//Home/home_screen.dart';
 import 'package:islam/ui/Hadeth/hadeth_details.dart';
 import 'package:islam/ui/Quran/sura_details.dart';
 import 'package:islam/ui/Splash/splash_screen.dart';
 import 'package:islam/ui/theme_data.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MyApplication());
+  runApp(ChangeNotifierProvider(
+      create: (buildContext) => SettingsProvider(), child: MyApplication()));
 }
 
 class MyApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       initialRoute: SplashScreen.routeName,
       routes: {
         HomeScreen.routeName: (buildConext) => HomeScreen(),
@@ -24,7 +29,7 @@ class MyApplication extends StatelessWidget {
       },
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      themeMode: MyThemeData.themeMode,
+      themeMode: provider.themeMode,
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -32,7 +37,7 @@ class MyApplication extends StatelessWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: [Locale('en'), Locale('ar')],
-      locale: Locale('ar'),
+      //locale: Locale('ar'),
     );
   }
 }

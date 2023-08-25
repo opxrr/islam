@@ -20,17 +20,22 @@ class MyThemeData {
         elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(color: ligthMainTextColor, fontSize: 30)),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: Color(0xFFB7935F),
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.white),
-    textTheme: const TextTheme(
-      displaySmall: TextStyle(color: ligthMainTextColor, fontSize: 32),
-      headlineLarge: TextStyle(color: ligthMainTextColor, fontSize: 24),
-      bodyLarge: TextStyle(color: ligthMainTextColor, fontSize: 24),
-      bodyMedium: TextStyle(color: ligthMainTextColor, fontSize: 20),
-    ),
-  );
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFFB7935F),
+          selectedItemColor: Colors.black,
+          unselectedItemColor: Colors.white),
+      textTheme: const TextTheme(
+        displaySmall: TextStyle(color: ligthMainTextColor, fontSize: 32),
+        headlineLarge: TextStyle(color: ligthMainTextColor, fontSize: 24),
+        bodyLarge: TextStyle(color: ligthMainTextColor, fontSize: 24),
+        bodyMedium: TextStyle(color: ligthMainTextColor, fontSize: 20),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12)))));
   static var darkTheme = ThemeData(
     progressIndicatorTheme:
         const ProgressIndicatorThemeData(color: darkAccentColor),
@@ -44,16 +49,20 @@ class MyThemeData {
         elevation: 0,
         centerTitle: true,
         titleTextStyle: TextStyle(color: darkMainTextColor, fontSize: 30)),
-    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
-        backgroundColor: Color(0xFFB7935F),
-        selectedItemColor: darkAccentColor,
-        unselectedItemColor: Colors.white),
-    textTheme: const TextTheme(
-      displaySmall: TextStyle(color: darkMainTextColor, fontSize: 32),
-      headlineLarge: TextStyle(color: darkMainTextColor, fontSize: 24),
-      bodyLarge: TextStyle(color: darkMainTextColor, fontSize: 24),
-      bodyMedium: TextStyle(color: darkMainTextColor, fontSize: 20),
-    ),
-  );
-  static ThemeMode themeMode = ThemeMode.dark;
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFFB7935F),
+          selectedItemColor: darkAccentColor,
+          unselectedItemColor: Colors.white),
+      textTheme: const TextTheme(
+        displaySmall: TextStyle(color: darkMainTextColor, fontSize: 32),
+        headlineLarge: TextStyle(color: darkMainTextColor, fontSize: 24),
+        bodyLarge: TextStyle(color: darkMainTextColor, fontSize: 22),
+        bodyMedium: TextStyle(color: darkMainTextColor, fontSize: 20),
+      ),
+      bottomSheetTheme: const BottomSheetThemeData(
+          backgroundColor: darkPrimaryColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(12),
+                  topRight: Radius.circular(12)))));
 }
