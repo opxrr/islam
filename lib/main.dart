@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:islam/ui//Home/home_screen.dart';
 import 'package:islam/ui/Hadeth/hadeth_details.dart';
 import 'package:islam/ui/Quran/sura_details.dart';
@@ -23,6 +25,14 @@ class MyApplication extends StatelessWidget {
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
       themeMode: MyThemeData.themeMode,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [Locale('en'), Locale('ar')],
+      locale: Locale('ar'),
     );
   }
 }
