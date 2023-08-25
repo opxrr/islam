@@ -8,5 +8,7 @@
   "hadeth_number": "رقم الحديث",
   "settings": "الاعدادات",
   "dark_mode": "الوضع الداكن",
-  "light_mode": "الوضع الفاتح"
+  "light_mode": "الوضع الفاتح",
+  "theme": "الوضع",
+  "language": "اللغة"
 }

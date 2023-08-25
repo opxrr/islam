@@ -8,5 +8,7 @@
   "hadeth_number": "Hadeth Number",
   "settings": "Settings",
   "dark_mode": "Dark Mode",
-  "light_mode": "Light Mode"
+  "light_mode": "Light Mode",
+  "theme": "Theme",
+  "language": "Language"
 }

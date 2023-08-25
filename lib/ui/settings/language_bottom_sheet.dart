@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islam/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
 
-class ThemeBottomSheet extends StatelessWidget {
-  const ThemeBottomSheet({super.key});
+class LanguageBottomSheet extends StatelessWidget {
+  const LanguageBottomSheet({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,26 +14,22 @@ class ThemeBottomSheet extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           InkWell(
-            onTap: () {
-                provider.enableLightMode();
+              onTap: () {
+                provider.changeLanguage('en');
               },
-              child: provider.themeMode == ThemeMode.light
-                  ? getSelectedWidget(
-                      AppLocalizations.of(context)!.light_mode, context)
-                  : getUnSelectedWidget(
-                      AppLocalizations.of(context)!.light_mode, context)),
+              child: provider.languageCode == 'en'
+                  ? getSelectedWidget('English', context)
+                  : getUnSelectedWidget('English', context)),
           SizedBox(
             height: 12,
           ),
           InkWell(
               onTap: () {
-                provider.enableDarkMode();
+                provider.changeLanguage('ar');
               },
-              child: provider.themeMode == ThemeMode.dark
-                  ? getSelectedWidget(
-                      AppLocalizations.of(context)!.dark_mode, context)
-                  : getUnSelectedWidget(
-                      AppLocalizations.of(context)!.dark_mode, context)),
+              child: provider.languageCode == 'ar'
+                  ? getSelectedWidget('العربيه', context)
+                  : getUnSelectedWidget('العربيه', context)),
         ],
       ),
     );
