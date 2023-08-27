@@ -24,4 +24,10 @@ class SettingsProvider extends ChangeNotifier {
         ? 'assets/images/default_bg.png'
         : 'assets/images/dark_bg.png';
   }
+
+  String getSebhaImage() {
+    return themeMode == ThemeMode.light
+        ? 'assets/images/body_sebha_logo.png'
+        : 'assets/images/body_sebha_dark.png';
+  }
 }

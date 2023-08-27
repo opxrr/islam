@@ -6,20 +6,23 @@ class MyThemeData {
   static const Color ligthMainTextColor = Color(0xFF242424);
   static const Color darkMainTextColor = Color(0xFFF8F8F8);
   static const Color darkAccentColor = Color(0xFFFACC1D);
+  static const Color lightAccentColor = Color(0xFFE8CF7D);
 
   static var lightTheme = ThemeData(
-    progressIndicatorTheme:
-        const ProgressIndicatorThemeData(color: lightPrimaryColor),
-    primaryColor: lightPrimaryColor,
-    hintColor: lightPrimaryColor,
-    cardTheme: const CardTheme(color: Colors.white),
-    scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: const AppBarTheme(
-        iconTheme: IconThemeData(color: Colors.black),
-        color: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        titleTextStyle: TextStyle(color: ligthMainTextColor, fontSize: 30)),
+      floatingActionButtonTheme:
+          FloatingActionButtonThemeData(backgroundColor: lightAccentColor),
+      progressIndicatorTheme:
+          const ProgressIndicatorThemeData(color: lightPrimaryColor),
+      primaryColor: lightPrimaryColor,
+      hintColor: lightAccentColor,
+      cardTheme: const CardTheme(color: Colors.white),
+      scaffoldBackgroundColor: Colors.transparent,
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.black),
+          color: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(color: ligthMainTextColor, fontSize: 30)),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xFFB7935F),
           selectedItemColor: Colors.black,
@@ -37,18 +40,20 @@ class MyThemeData {
                   topLeft: Radius.circular(12),
                   topRight: Radius.circular(12)))));
   static var darkTheme = ThemeData(
-    progressIndicatorTheme:
-        const ProgressIndicatorThemeData(color: darkAccentColor),
-    primaryColor: darkPrimaryColor,
-    hintColor: darkAccentColor,
-    cardTheme: const CardTheme(color: darkPrimaryColor),
-    scaffoldBackgroundColor: Colors.transparent,
-    appBarTheme: const AppBarTheme(
-        iconTheme: IconThemeData(color: Colors.white),
-        color: Colors.transparent,
-        elevation: 0,
-        centerTitle: true,
-        titleTextStyle: TextStyle(color: darkMainTextColor, fontSize: 30)),
+      floatingActionButtonTheme:
+          FloatingActionButtonThemeData(backgroundColor: darkAccentColor),
+      progressIndicatorTheme:
+          const ProgressIndicatorThemeData(color: darkAccentColor),
+      primaryColor: darkPrimaryColor,
+      hintColor: darkAccentColor,
+      cardTheme: const CardTheme(color: darkPrimaryColor),
+      scaffoldBackgroundColor: Colors.transparent,
+      appBarTheme: const AppBarTheme(
+          iconTheme: IconThemeData(color: Colors.white),
+          color: Colors.transparent,
+          elevation: 0,
+          centerTitle: true,
+          titleTextStyle: TextStyle(color: darkMainTextColor, fontSize: 30)),
       bottomNavigationBarTheme: const BottomNavigationBarThemeData(
           backgroundColor: Color(0xFFB7935F),
           selectedItemColor: darkAccentColor,
